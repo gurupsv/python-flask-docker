@@ -40,8 +40,7 @@ pipeline {
           sh "git checkout master"
           sh "git config --global credential.helper store"
           sh "jx step git credentials"
-          sh "jx create docker auth --host=index.docker.io --user=gurupsv --secret=Z3VydXBzdjpOZWlyb3MyMCE= --email=guruprasad.sv@gmail.com"
-
+          
           // so we can retrieve the version in later steps
           sh "echo \$(jx-release-version) > VERSION"
           sh "jx step tag --version \$(cat VERSION)"
